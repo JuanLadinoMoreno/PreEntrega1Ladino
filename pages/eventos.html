@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="../assets/img/logoSl.png" type="image/x-icon">
+
+    <!-- LeafletMaps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+
+    <!-- <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Eventos | Burguer Robles</title>
+    <meta name="keywords" content="hamburguesas, hotdogs, baguettes, club sandwiches, burritos">
+</head>
+
+<body>
+
+    <a href="#top-nav" id="btop" class="btn-top"><span class="fas fa-angle-up"></span></a>
+
+    <a href="" id="bwts" class="btn-wts"> <i class="fab fa-whatsapp"></i></a>
+
+    <nav>
+        <a class="" href="../index.html">
+            <img class="nav-logo" src="../assets/img/logoSl.png" alt="">
+        </a>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="../pages/about.html">Quienes somos</a></li>
+            <li><a href="../pages/asados.html">Asados</a></li>
+            <li><a href="../pages/eventos.html">Eventos</a></li>
+        </ul>
+
+
+
+
+        <div class="icons ">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""> <i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div class="toogle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+    <div class="dropdown-menus">
+        <ul>
+            <a href="../index.html">Inicio</a>
+            <a href="./menu.html">Menu</a>
+            <a href="../pages/about.html">Quienes somos</a>
+            <a href="../pages/asados.html">Asados</a>
+            <a href="../pages/eventos.html">Eventos</a>
+        </ul>
+    </div>
+
+    <header class="headerPag">
+        <div class="header-content">
+            <h1>Eventos</h1>
+        </div>
+    </header>
+
+    <section class="sect-gallery">
+        <div class="grid-container">
+            <div class="item ">
+                <img src="../assets/img/events/bg-event.jpg" alt="">
+            </div>
+
+            <div class="item ">
+                <img src="../assets/img/events/P1244319.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="../assets/img/events/P1244321.jpg" alt="">
+            </div>
+
+            <div class="item r-span2">
+                <img src="../assets/img/events/P1233991b.jpg" alt="">
+            </div>
+
+            <div class="item ">
+                <img src="../assets/img/events/P1244338.jpg" alt="">
+            </div>
+
+            <div class="item r-span2">
+                <img src="../assets/img/events/P1244348.jpg" alt="">
+            </div>
+
+            <div class="item ">
+                <img src="../assets/img/events/P1244357 (1).jpg" alt="">
+            </div>
+
+            <div class="item ">
+                <img src="../assets/img/events/P1244357.jpg" alt="">
+            </div>
+
+            <div class="item ">
+                <img src="../assets/img/events/P1244359.jpg" alt="">
+            </div>
+            <div class="item ">
+                <img src="../assets/img/events/P1244363 (1).jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="sectForm">
+        <div class="map-contact" id="mapaLea"></div>
+        <div class="contForm">
+            
+
+            <!-- Form -->
+            <form action="">
+                <div class="form">
+                    <h2>Comunicate con nosotros</h2>
+
+                    <div class="form-box">
+                        <div class="input-box ">
+                            <input type="text" required>
+                            <span>Nombre</span>
+                        </div>
+
+                        <div class="input-box ">
+                            <input type="text" required>
+                            <span>Apellido</span>
+                        </div>
+
+                        <div class="input-box ">
+                            <input type="text" required>
+                            <span>Email</span>
+                        </div>
+
+                        <div class="input-box ">
+                            <input type="text" required>
+                            <span>Telefono</span>
+                        </div>
+
+                        <div class="input-box ">
+                            <textarea required></textarea>
+                            <span>Escribe tu mensaje...</span>
+                        </div>
+
+                        <div class="input-box  btn">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+
+        <div class="cont-food">
+            <div class="food-menu">
+                <h3> MENU</h3>
+                <a href="">Hamburguesas</a>
+                <a href="">Hot-dog</a>
+                <a href="">Baguette</a>
+                <a href="">Sandwiches</a>
+                <a href="">Burritos</a>
+            </div>
+
+            <div class="food-menu">
+                <h3> MENU</h3>
+                <a href="">Hamburguesas</a>
+                <a href="">Hot-dog</a>
+                <a href="">Baguette</a>
+                <a href="">Sandwiches</a>
+                <a href="">Burritos</a>
+            </div>
+            <div class="food-icons">
+                <img src="../assets/img/logoSl.png" alt="">
+                <div class="icons">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""> <i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <p>© 2023. All Rights Reserved</p>
+    </footer>
+    <script>
+        //MENU MOVILES
+        const btntogg = document.querySelector('.toogle-btn');
+        const btntoggi = document.querySelector('.toogle-btn i');
+        const dropmen = document.querySelector('.dropdown-menus');
+
+        btntogg.onclick = function () {
+            dropmen.classList.toggle('opens');
+            const isOpen = dropmen.classList.contains('opens')
+
+            btntoggi.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+    <!-- LeafletMaps -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script>
+        let map = L.map('mapaLea').setView([18.9051, -98.4395], 17);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([18.9051, -98.4395]).addTo(map)
+            .bindPopup('Burguer Robles')
+            .openPopup();
+
+    </script>
+
+<script src="../assets/js/general.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.sect-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .grid-container {
+
+        width: 80%;
+        @include dGrid(repeat(4, 1fr), repeat(3, 210px), 5px);
+        
+
+        @include Tablet() {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 210px);
+        }
+
+        @include Phone() {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 210px);
+        }
+    }
+
+    .item {
+        border-radius: 10px;
+        overflow-y: hidden;
+        transition: all .5s;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            
+        }
+        
+        &:hover{
+                transform: scale(1.08);
+            }
+    }
+}
+

@@ -1,0 +1,27 @@
+//GENERALES
+@import "general/fonts";
+@import "general/variables";
+@import "general/generales";
+@import "general/mixin";
+@import "general/mediaq";
+
+
+
+//LAYUOT
+@import "layout/nav";
+@import "layout/header";
+@import "layout/ban-bseller";
+@import "layout/menu-index";
+@import "layout/ban-icons";
+
+
+@import "layout/ban-asados";
+@import "layout/ban-gallery";
+@import "layout/ban-events";
+@import "layout/footer";
+
+
+@import "pages/menu";
+@import "pages/asasdos";
+@import "pages/about";
+@import "pages/eventos";
