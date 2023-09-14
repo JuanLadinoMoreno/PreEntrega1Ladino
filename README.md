@@ -1,1 +1,2 @@
 # PreEntrega1Ladino
+Al principio del sitio nos va a mandar un promp el cual pedirá si queremos ordenar alguna hamburguesa (por el momento son solo hamburguesas), pedirá elegir el sabor (tradicional, tocino, champiñones, hawaiana ), elegir hacerla doble y cantidad de hamburgusas a ordenar, una vez terminado saldrá una ventana alert con lo que ordenó. Pedira si queremos ordenar otra cosa, volviendo hacer el mismo proceso
