@@ -49,6 +49,13 @@ nav {
         border-bottom: 1px solid $color-tercero;
     }
 
+    .lognav{
+        @include Tablet() {
+            opacity: 1;
+            
+        }
+    }
+
     .nav-logo {
         width: 60px;
         height: 60px;

@@ -46,21 +46,6 @@
         // z-index: 2;
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 30px;
-        width: 160px;
-        height: 170px;
-        background: url(../../assets/img/icons/Papas.svg);
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transform: rotate(-20deg);
-        opacity: 0.1;
-        // z-index: 2;
-    }
 }
 
 @mixin headerP( $urls){

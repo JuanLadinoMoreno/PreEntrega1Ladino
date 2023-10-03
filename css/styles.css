@@ -252,6 +252,11 @@ nav::before {
   z-index: -1;
   border-bottom: 1px solid #FEE7A6;
 }
+@media screen and (max-width: 768px) {
+  nav .lognav {
+    opacity: 1;
+  }
+}
 nav .nav-logo {
   width: 60px;
   height: 60px;
@@ -351,20 +356,6 @@ nav .toogle-btn i {
   transform: rotate(20deg);
   opacity: 0.1;
 }
-.dropdown-menus::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 30px;
-  width: 160px;
-  height: 170px;
-  background: url(../../assets/img/icons/Papas.svg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: rotate(-20deg);
-  opacity: 0.1;
-}
 .dropdown-menus ul {
   height: 100%;
   width: 100%;
@@ -397,101 +388,102 @@ nav .toogle-btn i {
 .header {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   top: 0;
-  background: url(../assets/img/hdr-img.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-end;
   clip-path: circle(140vh at 50% -50vh);
-  /* clip-path: polygon(0 0, 100% 0%, 100% 50%, 50% 90%, 0% 50%); */
-  /* -webkit-clip-path: circle(70.0% at 50% 25%);
-  clip-path: circle(70.0% at 50% 25%); */
 }
-.header::before {
-  content: "";
+@media screen and (max-width: 576px) {
+  .header {
+    height: 550px;
+    clip-path: circle(108vh at 50% -50vh);
+  }
+}
+.header video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  background-attachment: fixed;
+}
+@media screen and (max-width: 768px) {
+  .header video {
+    height: 100%;
+    width: 100%;
+  }
+}
+.header .bgBlack {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: -1;
+  clip-path: circle(140vh at 50% -50vh);
+}
+@media screen and (max-width: 576px) {
+  .header .bgBlack {
+    height: 550px;
+    clip-path: circle(108vh at 50% -50vh);
+  }
 }
 .header .header-content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  /* z-index: 2; */
+  margin-bottom: 70px;
+  z-index: 2;
 }
 .header .header-content h1 {
   font-family: "Concert One";
   font-size: 105px;
-  color: transparent;
+  color: #FFF;
   padding: 0 15px;
   letter-spacing: 1px;
   text-align: center;
   font-weight: 200;
   text-transform: uppercase;
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: #FC0;
   animation: efectTitle 2.5s linear infinite alternate-reverse;
 }
-.header .header-content h1 i {
-  padding: 5px;
-  font-size: 60px;
+@media screen and (max-width: 768px) {
+  .header .header-content h1 {
+    font-size: 65px;
+  }
 }
 @media screen and (max-width: 576px) {
   .header .header-content h1 {
-    font-size: 65px;
-    -webkit-text-stroke-width: 2px;
+    font-size: 45px;
   }
 }
-.header .header-content h2 {
-  font-family: "Concert One";
-  color: transparent;
-  font-size: 55px;
-  padding: 0 15px;
-  font-weight: 100;
-  letter-spacing: 1px;
-  text-align: center;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #FFF;
-  text-shadow: #FC0 5px 0 15px;
+.header .header-content h1 i {
+  padding: 5px;
+  font-size: 45px;
 }
 @media screen and (max-width: 576px) {
-  .header .header-content h2 {
-    font-size: 38px;
-    -webkit-text-stroke-width: 1px;
+  .header .header-content h1 i {
+    display: none;
   }
 }
-.header .header-content p {
-  font-family: "Fjalla One";
-  font-size: 18px;
-  font-weight: 100;
-  color: #EC6809;
-  text-align: center;
-  letter-spacing: 1px;
-  width: 50%;
+.header .header-content .img-center {
+  width: 180px;
+  height: 180px;
+}
+@media screen and (max-width: 768px) {
+  .header .header-content .img-center {
+    display: none;
+  }
 }
 
 .cont-img-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100px; */
   width: 100%;
-  /* background: #0F1854; */
-  position: absolute;
-  bottom: 10px;
-  /* transform: translateX(-50%, -50%); */
-  /* z-index: 5; */
+  z-index: 1;
   animation: trasIcon 4s linear infinite alternate-reverse;
 }
 .cont-img-center img {
@@ -509,12 +501,14 @@ nav .toogle-btn i {
 }
 @keyframes efectTitle {
   from {
-    text-shadow: rgb(236, 104, 9) 5px 0 15px;
-    opacity: 1;
+    text-shadow: rgba(236, 104, 9, 0.5) -15px 0 15px;
+    opacity: 0.7;
   }
   to {
-    text-shadow: rgba(236, 104, 9, 0.5) 5px 0 15px;
-    opacity: 0.8;
+    text-shadow: rgb(236, 104, 9) 9px 4px 15px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FC0;
+    opacity: 1;
   }
 }
 .sect-bseller .cont-text {
@@ -608,6 +602,7 @@ nav .toogle-btn i {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  overflow: hidden;
 }
 .menu-index .cont-menu-index {
   position: relative;
@@ -840,9 +835,83 @@ nav .toogle-btn i {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .sect-gallery .item:hover {
-  transform: scale(1.08);
+  transform: scale(0.95);
+}
+
+.lightbox.isActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.lightbox .imgGra {
+  background: aquamarine;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  border-radius: 30px;
+}
+.lightbox .btnClos {
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+}
+.lightbox .btnClos:hover {
+  transform: scale(1);
+}
+.lightbox .btnClos:active {
+  transform: scale(1.1);
+}
+
+.lightboxEv.isActive {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.lightboxEv {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.lightboxEv .btnClosEv {
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+}
+.lightboxEv .btnClosEv:hover {
+  transform: scale(1);
+}
+.lightboxEv .btnClosEv:active {
+  transform: scale(1.1);
 }
 
 .sect-events {
