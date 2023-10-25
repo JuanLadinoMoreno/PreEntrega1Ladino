@@ -1260,6 +1260,12 @@ footer .food-icons .icons a {
 .contMenus__menuVerti img {
   width: 70px;
 }
+.contMenus__menuVerti .prodVerti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
 @media screen and (max-width: 576px) {
   .contMenus__contInter {
     width: 100%;
@@ -1304,6 +1310,23 @@ footer .food-icons .icons a {
 .contDatosMenu__precios p {
   font-size: 16px;
   font-weight: 500;
+}
+.contDatosMenu__precios--btnAgregar {
+  position: relative;
+}
+.contDatosMenu__precios--btnAgregar i {
+  font-size: 22px;
+  font-weight: 900;
+}
+.contDatosMenu__precios--btnAgregar a {
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #EC6809;
+  letter-spacing: 1px;
+  border: 2px solid #EC6809;
 }
 .contDatosMenu img {
   width: 60%;

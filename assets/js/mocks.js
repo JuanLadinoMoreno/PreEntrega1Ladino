@@ -155,32 +155,38 @@ const ingredientePreparacion = [
 const arrTipoProducto = [
     {
         id: "1",
-        nombre: "Hamburguesa"
+        nombre: "hamburguesa",
+        url: "../assets/img/menu/burgMex.png"
     },
 
     {
         id: "2",
-        nombre: "Baguette"
+        nombre: "baguette",
+        url: "../assets/img/menu/burgMex.png"
     },
 
     {
         id: "3",
-        nombre: "Club Shandwiches"
+        nombre: "club shandwiches"        ,
+        url: "../assets/img/menu/burgMex.png"
     },
 
     {
         id: "4",
-        nombre: "Hot dog"
+        nombre: "hot dog",
+        url: "../assets/img/menu/burgMex.png"
     },
 
     {
         id: "5",
-        nombre: "Gran Danés"
+        nombre: "gran danés",
+        url: "../assets/img/menu/burgMex.png"
     },
 
     {
         id: "6",
-        nombre: "Burrito"
+        nombre: "burrito",
+        url: "../assets/img/menu/burgMex.png"
     }
 ]
 
@@ -211,6 +217,123 @@ const arrTipoBurg = [
     },
 ]
 
+const productosBurguer = [
+    {
+        id: "BURG1",
+        nombre: "Hamburguesa tradicional",
+        pan: "Pan Blanco",
+        preparacion: preparacion[0].nombre,
+        ingrePrep: ingredientePreparacion[0].nombre,
+        carne: carneBurguer[0].nombre,
+        catsup: aderesos[0].nombre,
+        mayonesa: aderesos[1].nombre,
+        mostaza: aderesos[2].nombre,
+        jito: vegetales[0].nombre,
+        cebo: vegetales[1].nombre,
+        pica: vegetales[2].nombre,
+        tipo: arrTipoProducto[0].nombre,
+        precio: "50",
+        
+        
+    },
+
+    {
+        id: "BURG2",
+        nombre: "Hamburguesa con tocino",
+        pan: "Pan Blanco",
+        preparacion: preparacion[1].nombre,
+        ingrePrep: ingredientePreparacion[1].nombre,
+        carne: carneBurguer[0].nombre,
+        catsup: aderesos[0].nombre,
+        mayonesa: aderesos[1].nombre,
+        mostaza: aderesos[2].nombre,
+        jito: vegetales[0].nombre,
+        cebo: vegetales[1].nombre,
+        pica: vegetales[2].nombre,
+        tipo: arrTipoProducto[0].nombre,
+        precio: "50",
+    },
+
+    {
+        id: "BURG3",
+        nombre: "Hamburguesa con hawaiana",
+        pan: "Pan Blanco",
+        preparacion:preparacion[2].nombre,
+        ingrePrep: ingredientePreparacion[2].nombre,
+        carne: carneBurguer[0].nombre,
+        catsup: aderesos[0].nombre,
+        mayonesa: aderesos[1].nombre,
+        mostaza: aderesos[2].nombre,
+        jito: vegetales[0].nombre,
+        cebo: vegetales[1].nombre,
+        pica: vegetales[2].nombre,
+        tipo: arrTipoProducto[0].nombre,
+        precio: "50",
+    },
+
+    {
+        id: "BURG4",
+        nombre: "Hamburguesa con champiñones",
+        pan: "Pan Blanco",
+        preparacion:preparacion[3].nombre,
+        ingrePrep: ingredientePreparacion[3].nombre,
+        carne: carneBurguer[0].nombre,
+        catsup: aderesos[0].nombre,
+        mayonesa: aderesos[1].nombre,
+        mostaza: aderesos[2].nombre,
+        jito: vegetales[0].nombre,
+        cebo: vegetales[1].nombre,
+        pica: vegetales[2].nombre,
+        tipo: arrTipoProducto[0].nombre,   
+        precio: "50",
+    },
+
+    {
+        id: "BURG5",
+        nombre: "Hamburguesa Mexicana",
+        pan: "Pan Blanco",
+        preparacion:preparacion[4].nombre,
+        ingrePrep: ingredientePreparacion[4].nombre,
+        carne: carneBurguer[0].nombre,
+        catsup: aderesos[0].nombre,
+        mayonesa: aderesos[1].nombre,
+        mostaza: aderesos[2].nombre,
+        jito: vegetales[0].nombre,
+        cebo: vegetales[1].nombre,
+        pica: vegetales[2].nombre,
+        tipo: arrTipoProducto[0].nombre,      
+        precio: "50",
+    },
+
+    //BAGUETTES
+    // {
+    //     id: "BAG1",
+    //     nombre: "Baguette con Pollo",
+    //     pan: "Pan Baguette Integral",
+    //     preparacion:preparacion[5].nombre,
+    //     ingrePrep: ingredientePreparacion[5].nombre,
+    //     pica: vegetales[2].nombre,
+    //     aguac: vegetales[3].nombre,
+    //     lechu: vegetales[4].nombre,
+    //     firjo: vegetales[5].nombre,
+    //     tipo: arrTipoProducto[1].nombre
+    // },
+
+    // {
+    //     id: "BAG2",
+    //     nombre: "Baguette Pierna Adobada",
+    //     pan: "Pan Baguette Integral",
+    //     preparacion:preparacion[6].nombre,
+    //     ingrePrep: ingredientePreparacion[6].nombre,
+    //     pica: vegetales[2].nombre,
+    //     aguac: vegetales[3].nombre,
+    //     lechu: vegetales[4].nombre,
+    //     firjo: vegetales[5].nombre,
+    //     tipo: arrTipoProducto[1].nombre
+    // },
+    
+];
+
 
 const productosOrdenados = [
     {
@@ -227,7 +350,8 @@ const productosOrdenados = [
         cebo: vegetales[1].nombre,
         pica: vegetales[2].nombre,
         tipo: arrTipoProducto[0].nombre,
-        precio: "50"
+        precio: "50",
+        // url : "../assets/img/menu/burgMex.png"
         
     },
 

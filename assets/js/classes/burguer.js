@@ -1,5 +1,5 @@
 class Burguer {
-        constructor(id, nombre, pan, preparacion, ingrePrep, carne, catsup, mayo, mostaza, jito, cebo, pica, precio){
+        constructor(id, nombre, pan, preparacion, ingrePrep, carne, catsup, mayo, mostaza, jito, cebo, pica, precio, url){
             this.id = id;
             this.nombre = nombre;
             this.pan=pan;
@@ -13,6 +13,7 @@ class Burguer {
             this.cebo=cebo;
             this.pica=pica;
             this.precio = precio;
+            // this.url = url
             
         }
 

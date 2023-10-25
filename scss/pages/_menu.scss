@@ -13,7 +13,7 @@
 
     @include dFlex(space-around, center, row wrap);
 
-    
+
 
     &::before {
         content: '';
@@ -64,59 +64,60 @@
             height: 4px;
             background: #FFF;
             border-radius: 40%;
-               box-shadow:    0 0 0 4px rgba(255, 255, 255, 0.1),
-                              0 0 0 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+                0 0 0 8px rgba(255, 255, 255, 0.1);
             animation: animate 3s linear infinite;
             right: 50%;
-            @include Tablet(){
+
+            @include Tablet() {
                 right: 0;
             }
-    
-    
+
+
             &::before {
                 content: '';
                 position: absolute;
                 width: 150px;
                 height: 1px;
                 background: linear-gradient(90deg, #FFF, transparent);
-    
+
             }
-    
-            &:nth-child(1){
+
+            &:nth-child(1) {
                 top: 35%;
                 // right: 50%;
                 left: initial;
                 animation-delay: 0;
                 animation-duration: 3.5s;
             }
-            
-            &:nth-child(2){
-                
+
+            &:nth-child(2) {
+
                 top: 20%;
                 // right: 50%;
                 left: initial;
                 animation-delay: 0.2s;
                 animation-duration: 3s;
             }
-            
-            &:nth-child(3){
-                
+
+            &:nth-child(3) {
+
                 top: 50%;
                 // right: 50%;
                 left: initial;
                 animation-delay: 0.6s;
                 animation-duration: 1.5s;
             }
-            
-            &:nth-child(4){
+
+            &:nth-child(4) {
                 top: 75%;
                 // right: 50%;
                 left: initial;
                 animation-delay: 0.4s;
                 animation-duration: 2s;
             }
-            
-            &:nth-child(5){
+
+            &:nth-child(5) {
                 bottom: 90%;
                 // right: 50%;
                 left: initial;
@@ -244,6 +245,9 @@
             width: 70px;
         }
 
+        .prodVerti{
+            @include dFlex(center, center, column nowrap);
+        }
 
     }
 
@@ -287,6 +291,8 @@
     &__datos {
 
         // background: aquamarine;
+        
+
         li {
             color: $color-primero;
             font-size: 16px;
@@ -309,6 +315,33 @@
         p {
             font-size: 16px;
             font-weight: 500;
+        }
+
+        &--btnAgregar {
+            position: relative;
+
+            i{
+                // position: absolute;
+                // left: 0;
+                // background-color: $color-segundo;
+                // border-radius: 50%;
+                // padding: 5px;
+                font-size: 22px;
+                font-weight: 900;
+                // color: #FFF;
+            }
+
+            a {
+                width: 100%;
+                background-color: #FFF;
+                border-radius: 10px;
+                padding: 5px 10px;
+                font-size: 18px;
+                color: $color-segundo;
+                letter-spacing: 1px;
+                border: 2px solid $color-segundo;
+            }
+
         }
     }
 
