@@ -33,12 +33,18 @@ const lstProductos = [
         preparacion: preparacion[1].nombre,
         ingrePrep: ingredientePreparacion[1].nombre,
         carne: carneBurguer[0].nombre,
-        catsup: aderesos[0].nombre,
-        mayonesa: aderesos[1].nombre,
-        mostaza: aderesos[2].nombre,
-        jito: vegetales[0].nombre,
-        cebo: vegetales[1].nombre,
-        pica: vegetales[2].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        
+        vegetales: {
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },
         tipo: arrTipoProducto[0].nombre,
         precio: "50",
         url: "../assets/img/menu/burToci.png"
@@ -51,12 +57,18 @@ const lstProductos = [
         preparacion:preparacion[2].nombre,
         ingrePrep: ingredientePreparacion[2].nombre,
         carne: carneBurguer[0].nombre,
-        catsup: aderesos[0].nombre,
-        mayonesa: aderesos[1].nombre,
-        mostaza: aderesos[2].nombre,
-        jito: vegetales[0].nombre,
-        cebo: vegetales[1].nombre,
-        pica: vegetales[2].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        
+        vegetales: {
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },
         tipo: arrTipoProducto[0].nombre,
         precio: "50",
         url: "../assets/img/menu/burToci.png"
@@ -69,12 +81,18 @@ const lstProductos = [
         preparacion:preparacion[3].nombre,
         ingrePrep: ingredientePreparacion[3].nombre,
         carne: carneBurguer[0].nombre,
-        catsup: aderesos[0].nombre,
-        mayonesa: aderesos[1].nombre,
-        mostaza: aderesos[2].nombre,
-        jito: vegetales[0].nombre,
-        cebo: vegetales[1].nombre,
-        pica: vegetales[2].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        
+        vegetales: {
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },
         tipo: arrTipoProducto[0].nombre,   
         precio: "50",
         url: "../assets/img/menu/burToci.png"
@@ -87,12 +105,18 @@ const lstProductos = [
         preparacion:preparacion[4].nombre,
         ingrePrep: ingredientePreparacion[4].nombre,
         carne: carneBurguer[0].nombre,
-        catsup: aderesos[0].nombre,
-        mayonesa: aderesos[1].nombre,
-        mostaza: aderesos[2].nombre,
-        jito: vegetales[0].nombre,
-        cebo: vegetales[1].nombre,
-        pica: vegetales[2].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        
+        vegetales: {
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },
         tipo: arrTipoProducto[0].nombre,      
         precio: "50",
         url: "../assets/img/menu/burToci.png"
@@ -153,19 +177,30 @@ const lstProductos = [
 
 const CONTPROD = document.querySelector(`.contProd`)
 const VEGPROD = document.querySelector(`.vegProd`)
+let btnsAgregar = document.querySelector(`.btnAgregar`);
+
 
 const li = document.createElement(`li`); 
 const cargaIngre = () => {
 
     for(i = 0; i < lstProductos.length; i++) {
         li.innerHTML = `
-                    
+
                     `;
         li.innerHTML = `${producto.aderesos[i]}`;
     }
 
 
  }
+
+ const actbtnAgr = () => {
+    btnsAgregar = document.querySelectorAll(".btnAgregar");
+
+    btnsAgregar.forEach(btn => {
+        btn.addEventListener("click", agregarAlCarrito);
+    });
+}
+
 const cargaProducto = () => {
     lstProductos.forEach( producto => {
         const div = document.createElement("div");
@@ -179,31 +214,27 @@ const cargaProducto = () => {
                                 <ul class = "vegProd">
                                 
                                 <li>- ${producto.nombre}</li>
-                                    <li>- Cerne 100% de res</li>
-                                    <li>- Queso manchego</li>
-                                    <li>- Mayonesa</li>
-                                    <li>- Catsup</li>
-                                    <li>- Mostasa</li>
-                                    <li>- Jitomate</li>
-                                    <li>- Cebolla</li>
-                                    <li>- Picante</li>
+                                    <li>- ${producto.ingrePrep}</li>
+                                    <li>- ${producto.aderesos?.mayonesa}</li>
+                                    <li>- ${producto.aderesos?.catsup}</li>
+                                    <li>- ${producto.aderesos?.mostaza}</li>
+                                    <li>- ${producto.vegetales?.jito}</li>
+                                    <li>- ${producto.vegetales?.cebo}</li>
+                                    <li>- ${producto.vegetales?.pica}</li>
                                 </ul>
                                 <div
                                     class="contDatosMenu__precios d-flex justify-content-center align-items-center flex-column">
                                     <div
                                         class="contDatosMenu__precios contDatosMenu__precios--sencillo d-flex justify-content-center align-items-center flex-column">
                                     <h4>Sencilla</h4>
-                                        <p>$50.00</p>
+                                        <p>$ ${producto.precio}</p>
                                     </div>
-                                    <div class="contDatosMenu__precios--sencillo contDatosMenu__precios--doble">
-                                        <h4>Double</h4>
-                                        <p>$60.00</p>
-                                    </div>
+                                    
                                     <div class="contDatosMenu__precios--btnAgregar">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Launch demo modal
-                                        </button>
-                                        <!-- <button class="data-bs-toggle="modal" data-bs-target="#exampleModal"" href=""> <i class="bi bi-cart-plus"></i>  Ordenar</button> -->
+                                        </button>-->
+                                         <button class="btnAgregar" id="${producto.id}" href=""> <i class="bi bi-cart-plus"></i>  Ordenar</button> 
                                     </div>
 
                                 </div>
@@ -214,52 +245,64 @@ const cargaProducto = () => {
         CONTPROD.append(div);
     })
 
-    
+    actbtnAgr();
+}
+cargaProducto();
+
+const carrito = [];
+
+function agregarAlCarrito  (e) {
+    const idBtn = e.currentTarget.id;
+    const productoAgregar = lstProductos.find(producto => producto.id === idBtn);
+
+
+    if (carrito.some(producto => producto.id == idBtn)) {
+        const index = carrito.findIndex(producto => producto.id === idBtn);
+        carrito[index].cantidad++;
+    }else{
+        productoAgregar.cantidad = 1;
+        carrito.push(productoAgregar);
+    }
+
+    let cantidadProductosAgregar = carrito.reduce((acc, producto) => acc + producto.cantidad,0);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));      
 }
 
-console.log(cargaProducto());
-
-// <!-- CONTENEDOR BG-TRADI -->
-//                             <div class="tab-pane fade show active  " id="pills-home" role="tabpanel"
-//                                 aria-labelledby="pills-home-tab" tabindex="0">
-
-//                                 <div class="contDatosMenu ">
-//                                     <img src="../assets/img/menu/burgMex.png" alt="" class=" contDatosMenu__img ">
-//                                     <div
-//                                         class="contDatosMenu__datos  w-75 d-flex justify-content-around align-items-center">
-//                                         <ul>
-//                                             <li>- Cerne 100% de res</li>
-//                                             <li>- Queso manchego</li>
-//                                             <li>- Mayonesa</li>
-//                                             <li>- Catsup</li>
-//                                             <li>- Mostasa</li>
-//                                             <li>- Jitomate</li>
-//                                             <li>- Cebolla</li>
-//                                             <li>- Picante</li>
-//                                         </ul>
-//                                         <div
-//                                             class="contDatosMenu__precios d-flex justify-content-center align-items-center flex-column">
-//                                             <div
-//                                                 class="contDatosMenu__precios contDatosMenu__precios--sencillo d-flex justify-content-center align-items-center flex-column">
-//                                                 <h4>Sencilla</h4>
-//                                                 <p>$50.00</p>
-//                                             </div>
-//                                             <div class="contDatosMenu__precios--sencillo contDatosMenu__precios--doble">
-//                                                 <h4>Double</h4>
-//                                                 <p>$60.00</p>
-//                                             </div>
-//                                             <div class="contDatosMenu__precios--btnAgregar">
-//                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-//                                                     Launch demo modal
-//                                                   </button>
-//                                                 <!-- <button class="data-bs-toggle="modal" data-bs-target="#exampleModal"" href=""> <i class="bi bi-cart-plus"></i>  Ordenar</button> -->
-//                                             </div>
-
-//                                         </div>
-//                                     </div>
-//                                 </div>
-
-//                             </div>
 
 
 
+const  prodCarr = JSON.parse(localStorage.getItem("carrito"));
+
+const contCarr = document.querySelector(".contCarr");
+
+const carrCantidad = document.querySelector(".carrCantidad");
+const prodCantidad = document.querySelector(".prodCantidad");
+const carrCosto = document.querySelector(".carrCosto");
+
+if(prodCarr){
+    prodCarr.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("carriProducto", "container");
+        div.innerHTML = `
+                    
+                    <p id=""> ${producto.nombre}</p>
+                     <div class="container d-flex justify-content-between align-items-center ">
+                        <img src="${producto.url}" alt="" style="width:80px;">
+                        <h2 id="prodCantidad">Cantidad: ${producto.cantidad} </h2>
+                        <p id="carrCosto"> ${producto.cantidad * producto.precio} </p>
+                    </div>
+        `;
+        contCarr.append(div);
+    })
+
+}
+
+{/* <section class="contCarr">
+    <p id="carrCantidad">Cantidad de productos</p>
+    <div class="container d-flex justify-content-between align-items-center ">
+        <img src="" alt="">
+        <h2 id="prodCantidad"> catidad 2 </h2>
+        <p id="carrCosto"> costo 1000</p>
+</div>
+    </section> */}

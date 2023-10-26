@@ -387,3 +387,31 @@
     //     background-color: $color-primero;
     // }
 }
+
+
+.btnsAgregar {
+    position: relative;
+
+    i{
+        // position: absolute;
+        // left: 0;
+        // background-color: $color-segundo;
+        // border-radius: 50%;
+        // padding: 5px;
+        font-size: 22px;
+        font-weight: 900;
+        // color: #FFF;
+    }
+
+    a {
+        width: 100%;
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-size: 18px;
+        color: $color-segundo;
+        letter-spacing: 1px;
+        border: 2px solid $color-segundo;
+    }
+
+}
