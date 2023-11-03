@@ -251,6 +251,7 @@ cargaProducto();
 
 const carrito = [];
 
+
 function agregarAlCarrito  (e) {
     const idBtn = e.currentTarget.id;
     const productoAgregar = lstProductos.find(producto => producto.id === idBtn);
@@ -264,13 +265,13 @@ function agregarAlCarrito  (e) {
         carrito.push(productoAgregar);
     }
 
-    let cantidadProductosAgregar = carrito.reduce((acc, producto) => acc + producto.cantidad,0);
+    // cantidadProductosAgregar = carrito.reduce((acc, producto) => acc + producto.cantidad,0);
 
     localStorage.setItem("carrito", JSON.stringify(carrito));      
 }
 
 
-
+let total = 0;
 
 const  prodCarr = JSON.parse(localStorage.getItem("carrito"));
 
@@ -280,8 +281,9 @@ const carrCantidad = document.querySelector(".carrCantidad");
 const prodCantidad = document.querySelector(".prodCantidad");
 const carrCosto = document.querySelector(".carrCosto");
 
-if(prodCarr){
+if (prodCarr) {
     prodCarr.forEach(producto => {
+        total += parseInt(producto.cantidad * producto.precio);
         const div = document.createElement("div");
         div.classList.add("carriProducto", "container");
         div.innerHTML = `
@@ -289,12 +291,24 @@ if(prodCarr){
                     <p id=""> ${producto.nombre}</p>
                      <div class="container d-flex justify-content-between align-items-center ">
                         <img src="${producto.url}" alt="" style="width:80px;">
-                        <h2 id="prodCantidad">Cantidad: ${producto.cantidad} </h2>
-                        <p id="carrCosto"> ${producto.cantidad * producto.precio} </p>
+                        <p id="prodCantidad">Cantidad: ${producto.cantidad} </p>
+                        <p id="carrCosto">Costo:  ${producto.cantidad * producto.precio} </p>
+                        
                     </div>
-        `;
+                    
+                    `;
         contCarr.append(div);
+
     })
+
+    const divTotal = document.createElement("div");
+    divTotal.innerHTML = `
+                            <div class="container d-flex justify-content-end align-items-center">
+                                <h2 class="">Costo total:  ${total} </h2>
+                            </div>
+                   
+                    `;
+    contCarr.append(divTotal);
 
 }
 
