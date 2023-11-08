@@ -176,7 +176,7 @@ const lstProductos = [
 
 
 const CONTPROD = document.querySelector(`.contProd`)
-const VEGPROD = document.querySelector(`.vegProd`)
+// const VEGPROD = document.querySelector(`.vegProd`)
 let btnsAgregar = document.querySelector(`.btnAgregar`);
 
 
@@ -244,11 +244,11 @@ const cargaIngre = (idd) => {
     
 
 
-  
+    const VEGPROD = document.querySelector(`.vegProd`)
     const found = lstProductos.find((producto) => {return producto.id === idd });
     let vegeOb = found.vegetales;
     let vegeArre = Object.values(vegeOb);
-    console.log(vegeArre);
+    console.log("esrdsfsdf"+VEGPROD);
    
    
    //  const mapArre = vege.map(vege => {
@@ -262,7 +262,7 @@ const cargaIngre = (idd) => {
    
     for (let i = 0; i < vegeArre.length; i++) {
         const element = vegeArre[i];
-        console.log("elemento " + element);
+        // console.log("elemento " + element);
 
 
         let liIngre = document.createElement("li");
