@@ -180,18 +180,110 @@ const VEGPROD = document.querySelector(`.vegProd`)
 let btnsAgregar = document.querySelector(`.btnAgregar`);
 
 
-const li = document.createElement(`li`); 
-const cargaIngre = () => {
+// const li = document.createElement(`li`); 
+// const cargaIngre = () => {
 
-    for(i = 0; i < lstProductos.length; i++) {
-        li.innerHTML = `
+//     for(i = 0; i < lstProductos.length; i++) {
+//         li.innerHTML = `
 
-                    `;
-        li.innerHTML = `${producto.aderesos[i]}`;
+//                     `;
+//         li.innerHTML = `${producto.aderesos[i]}`;
+//     }
+
+
+//  }
+
+let arrIngrePro = ["1", "2"];
+const cargaIngre = (idd) => {
+
+    // lstProductos.forEach( producto => {
+    //     let liIngre = document.createElement("li");
+    //     let node = document.createTextNode(producto.vegetales);
+    //     liIngre.appendChild(node);
+    //     // VEGPROD.appendChild(liIngre);
+    //     console.log(liIngre);
+    // });
+
+    // const found = lstProductos.find((producto) => {return producto.id === "BURG1" });
+    // console.log("found " + found);
+    // const arre = Object.values(found);
+    // console.log(arre);
+
+    // found.vegetales.forEach(producto => {
+    //     console.log("found" + producto.id);
+    // });
+    
+
+    // const pro = lstProductos.map(producto => {
+    //     if (producto.id == "BURG1") {
+    //         arrIngrePro = producto.vegetales;
+    //         // console.log(producto);
+    //     }
+        
+
+    // });
+    // console.log(arrIngrePro.length);
+    // console.log("arreglo " + arrIngrePro);
+    
+    
+
+    // for(i = 0; i < lstProductos.length; i++) {
+
+    //     let liIngre = document.createElement("li");
+    //     let node = document.createTextNode(lstProductos.vegetales[i]);
+    //     liIngre.appendChild(node);
+    //     // VEGPROD.appendChild(liIngre);
+    //     console.log(liIngre);
+
+    //     // li.innerHTML = `
+
+    //     //             `;
+    //     // li.innerHTML = `${producto.aderesos[i]}`;
+    // }
+
+    
+
+
+  
+    const found = lstProductos.find((producto) => {return producto.id === idd });
+    let vegeOb = found.vegetales;
+    let vegeArre = Object.values(vegeOb);
+    console.log(vegeArre);
+   
+   
+   //  const mapArre = vege.map(vege => {
+   //     return vege.vegetales;
+   //  });
+   
+    
+   
+   //  console.log(found);
+    
+   
+    for (let i = 0; i < vegeArre.length; i++) {
+        const element = vegeArre[i];
+        console.log("elemento " + element);
+
+
+        let liIngre = document.createElement("li");
+        // let node = document.createTextNode(vegeArre[i]);
+
+        // liIngre.appendChild(node);
+        // VEGPROD.appendChild(liIngre);
+
+
+        liIngre.textContent = vegeArre[i];
+        VEGPROD.appendChild(liIngre);
+
+console.log(liIngre);
+console.log(VEGPROD);
     }
 
 
+
  }
+
+
 
  const actbtnAgr = () => {
     btnsAgregar = document.querySelectorAll(".btnAgregar");
@@ -202,9 +294,19 @@ const cargaIngre = () => {
 }
 
 const cargaProducto = () => {
-    lstProductos.forEach( producto => {
+    lstProductos.forEach( (producto, index) => {
         const div = document.createElement("div");
-        div.classList.add("tab-pane","fade","show","active");
+        // div.classList.add("tab-pane", "fade", "show", "active");
+
+        if (index == 0) {
+            console.log(index);
+            div.classList.add("tab-pane", "fade", "show", "active");
+        }
+        else {
+            div.classList.add("tab-pane", "fade", "show");
+        }
+
+        
         div.id = "pills-home";
         div.innerHTML = `
                         <div class="contDatosMenu ">
@@ -218,9 +320,16 @@ const cargaProducto = () => {
                                     <li>- ${producto.aderesos?.mayonesa}</li>
                                     <li>- ${producto.aderesos?.catsup}</li>
                                     <li>- ${producto.aderesos?.mostaza}</li>
-                                    <li>- ${producto.vegetales?.jito}</li>
-                                    <li>- ${producto.vegetales?.cebo}</li>
-                                    <li>- ${producto.vegetales?.pica}</li>
+                                    
+                                    ${
+                                        
+                                        // found = lstProductos.find((produc) => {return produc.id === producto.id }),
+                                        // vegeOb = found.vegetales,
+                                        // vegeArre = Object.values(vegeOb)
+   
+                                        cargaIngre(producto.id)
+                                   }
+
                                 </ul>
                                 <div
                                     class="contDatosMenu__precios d-flex justify-content-center align-items-center flex-column">
