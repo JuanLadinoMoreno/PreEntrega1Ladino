@@ -266,9 +266,9 @@ btnsMenu.forEach(boton => {
 
 
 let carrShop;
-const  prodCarrLS = JSON.parse(localStorage.getItem("carrShop"));
+const  prodCarrLS = localStorage.getItem("carrShop");
 if(prodCarrLS){
-    carrShop = prodCarrLS;
+    carrShop = JSON.parse(prodCarrLS);
     actCanti();
 }else{
     carrShop = [];
