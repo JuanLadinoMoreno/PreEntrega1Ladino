@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 h1, h2, h3, h4, h5 {
   overflow: hidden;
 }
@@ -98,15 +102,15 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
   height: 45px;
+  padding: 0 15px;
   color: #FFF;
   background: #EC6809;
   border: 3px solid #FEE7A6;
   border-radius: 20px;
   text-align: center;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 400;
   transition: all 0.5s;
 }
 .btn-prin:hover {
@@ -205,6 +209,10 @@ section {
 }
 .btn-wts.wts-sticky:hover {
   opacity: 0.5;
+}
+
+.disabled {
+  display: none !important;
 }
 
 nav {
@@ -1353,6 +1361,108 @@ footer .food-icons .icons a {
   border-radius: 10px;
 }
 
+.btnsAgregar {
+  position: relative;
+}
+.btnsAgregar i {
+  font-size: 22px;
+  font-weight: 900;
+}
+.btnsAgregar a {
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #EC6809;
+  letter-spacing: 1px;
+  border: 2px solid #EC6809;
+}
+
+.contMen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.contMen .dvMenProductos {
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.contMen .dvMenProductos .ulMenu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+.contMen .dvMenProductos a {
+  color: #0F1854;
+}
+.contMen .dvMenProductos .prodCant {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+.contMen .dvMenProductos .btnMenu.active {
+  background: rgba(15, 24, 84, 0.8);
+}
+.contMen .dvProductos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 50px;
+  gap: 30px;
+}
+.contMen .dvProductos .dvProducto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  box-shadow: rgba(15, 24, 84, 0.25) 0px 50px 100px -20px, rgba(15, 24, 84, 0.3) 0px 30px 60px -30px;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-top: 50px;
+}
+.contMen .dvProductos .dvProducto .imgProducto {
+  max-width: 60%;
+}
+.contMen .dvProductos .dvProducto .datProd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 15px 0px;
+}
+.contMen .dvProductos .dvProducto .datProd h3 {
+  padding: 5px 0;
+}
+.contMen .dvProductos .dvProducto .datProd .btnAnadirP {
+  width: 100%;
+  border: 2px solid #EC6809;
+  border-radius: 10px;
+  color: #EC6809;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+.contMen .dvProductos .dvProducto .datProd .btnAnadirP:hover {
+  color: #FFF;
+  background: #EC6809;
+}
+.contMen .dvProductos .dvProducto .datProd .ulIngre {
+  text-transform: uppercase;
+}
+
 .headerPaga {
   width: 100%;
   height: 40vh;
@@ -1928,6 +2038,60 @@ footer .food-icons .icons a {
 }
 .sectForm .contForm .form .form-box .input-box.w100 {
   width: 100%;
+}
+
+.contCarr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;
+}
+.contCarr .carVacio, .contCarr .carrComprado {
+  text-align: center;
+}
+.contCarr .productsCarr {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contCarr .productsCarr .prodCarr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  width: 100%;
+  padding: 10px 20px;
+  gap: 10px;
+  background: rgba(236, 104, 9, 0.2);
+  border-radius: 10px;
+}
+.contCarr .productsCarr .prodCarr small {
+  font-size: 18px;
+}
+.contCarr .productsCarr .btnEliminar {
+  border: 0;
+  background: transparent;
+  color: #EC6809;
+}
+.contCarr .accCarr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.contCarr .accCarr .btnVaciar {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+.contCarr .accCarr .dvCalcu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.contCarr .accCarr .dvCalcu .total {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

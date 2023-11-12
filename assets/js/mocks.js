@@ -154,25 +154,25 @@ const ingredientePreparacion = [
 
 const arrTipoProducto = [
     {
-        id: "1",
+        id: "burguerP",
         nombre: "hamburguesa",
         url: "../assets/img/menu/burgMex.png"
     },
 
     {
-        id: "2",
+        id: "bagP",
         nombre: "baguette",
         url: "../assets/img/menu/burgMex.png"
     },
 
     {
-        id: "3",
+        id: "sandP",
         nombre: "club shandwiches"        ,
         url: "../assets/img/menu/burgMex.png"
     },
 
     {
-        id: "4",
+        id: "hotdogP",
         nombre: "hot dog",
         url: "../assets/img/menu/burgMex.png"
     },
@@ -184,7 +184,7 @@ const arrTipoProducto = [
     },
 
     {
-        id: "6",
+        id: "burrP",
         nombre: "burrito",
         url: "../assets/img/menu/burgMex.png"
     }

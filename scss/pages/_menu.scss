@@ -245,7 +245,7 @@
             width: 70px;
         }
 
-        .prodVerti{
+        .prodVerti {
             @include dFlex(center, center, column nowrap);
         }
 
@@ -291,7 +291,7 @@
     &__datos {
 
         // background: aquamarine;
-        
+
 
         li {
             color: $color-primero;
@@ -320,7 +320,7 @@
         &--btnAgregar {
             position: relative;
 
-            i{
+            i {
                 // position: absolute;
                 // left: 0;
                 // background-color: $color-segundo;
@@ -392,7 +392,7 @@
 .btnsAgregar {
     position: relative;
 
-    i{
+    i {
         // position: absolute;
         // left: 0;
         // background-color: $color-segundo;
@@ -412,6 +412,111 @@
         color: $color-segundo;
         letter-spacing: 1px;
         border: 2px solid $color-segundo;
+    }
+
+}
+
+
+.contMen {
+    @include dFlex(center, center, column nowrap);
+    // width: 100%;
+    // background-color: #F2CB05;
+    // height: 100vh;
+
+    .dvMenProductos {
+        width: 100%;
+        padding: 0 25px;
+        // background-color: aquamarine;
+        @include dFlex(space-between, center, row nowrap);
+
+        .ulMenu {
+            // background-color: #F28705;
+            width: 100%;
+            @include dFlex(center, center, row nowrap);
+            gap: 10px;
+
+        }
+
+        a {
+            color: $color-primero;
+        }
+
+        .prodCant {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0 10px;
+        }
+
+        .btnMenu.active{
+            background: rgba($color-primero, 0.8);
+
+        }
+
+    }
+
+
+    .dvProductos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 50px;
+        gap: 30px;
+        
+        
+
+        .dvProducto {
+            @include dFlex(center, center, row nowrap);
+            // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            box-shadow: rgba($color-primero, 0.25) 0px 50px 100px -20px, rgba($color-primero, 0.3) 0px 30px 60px -30px;
+            border-radius: 10px;
+            padding: 5px 20px;
+            margin-top: 50px;
+
+
+            .imgProducto {
+                max-width: 60%;
+            }
+
+            .datProd{
+                @include dFlex(center, center, column nowrap);
+                padding: 15px 0px;
+
+                h3{
+                    padding: 5px 0;
+                }
+                
+                // background: rgba($color-segundo, 0.25);
+                // border: 1px solid $color-segundo;
+                // border-radius: 10px;
+
+                // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+                .btnAnadirP{
+                    width: 100%;
+                    // background: rgba($color-primero, 0.8);
+                    border: 2px solid $color-segundo;
+                    border-radius: 10px;
+                    color: $color-segundo;
+                    @include dFlex(center, center, row nowrap);
+                    gap: 10px;
+                    font-weight: 400;
+                    font-size: 20px;
+                    transition: all 0.5s;
+
+                    &:hover{
+                        color: #FFF;
+                        background: $color-segundo;
+                    }
+                }
+
+                .ulIngre{
+                    text-transform: uppercase;
+                }
+            }
+
+
+        }
+
+
     }
 
 }
