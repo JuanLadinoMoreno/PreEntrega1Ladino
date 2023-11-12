@@ -21,10 +21,31 @@ let totalPagar = document.querySelector("#totalPagar");
 
 const eliminarDelCarrito = (e) => {
     const idBoton = e.currentTarget.id;
-    const index = prodCarr.findIndex(producto => producto.id === idBoton);
-    prodCarr.splice(index,1);
-    cargaProductosCar();
-    localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+
+    const productoAgregar = prodCarr.find(producto => producto.id === idBoton);
+    Swal.fire({
+        title: "Seguro que deseas eliminar el producto?" + productoAgregar.nombre,
+        showDenyButton: false,
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Acepto",
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+
+            const index = prodCarr.findIndex(producto => producto.id === idBoton);
+            prodCarr.splice(index,1);
+            cargaProductosCar();
+            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+
+            Swal.fire("Producto eliminado", "", "success");
+        } 
+    });
+
+
+
+    
+    
 }
 
 const cargaProductosCar = () => {
@@ -88,7 +109,26 @@ const cargaProductosCar = () => {
 
 cargaProductosCar();
 
-btnVaciar.addEventListener("click", vaciarCarro);
+btnVaciar.addEventListener("click", () => {
+
+    Swal.fire({
+        title: "Seguro que deseas vaciar el carrito con su pedido?",
+        showDenyButton: false,
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Acepto"
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            prodCarr.length = 0;
+            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+            cargaProductosCar();
+            
+            Swal.fire("El carrito de compras se ha vaciado", "", "success");
+        }
+    });
+});
+
 function vaciarCarro(){
     prodCarr.length = 0;
     localStorage.setItem("carrShop", JSON.stringify(prodCarr));

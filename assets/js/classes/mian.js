@@ -157,6 +157,107 @@ const lstProductos = [
         url: "../assets/img/menu/baguet.png"
     },
     
+    {
+        id: "BAG3",
+        nombre: "Baguette de Cochinita Pibil",
+        pan: "Pan Baguette Integral",
+        preparacion:preparacion[7].nombre,
+        ingrePrep: ingredientePreparacion[7].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[1],
+        precio: "50",
+        url: "../assets/img/menu/baguet.png"
+    },
+
+    {
+        id: "BAG3",
+        nombre: "Baguette de Cochinita Pibil",
+        pan: "Pan Baguette Integral",
+        preparacion:preparacion[8].nombre,
+        ingrePrep: ingredientePreparacion[8].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[1],
+        precio: "50",
+        url: "../assets/img/menu/baguet.png"
+    },
+
+    {
+        id: "SANDW1",
+        nombre: "Sandwiche de Pollo",
+        pan: "Pan Blanco",
+        preparacion:preparacion[5].nombre,
+        ingrePrep: ingredientePreparacion[5].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[2],
+        precio: "50",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "SANDW2",
+        nombre: "Sandwiche de Pierna Adobada",
+        pan: "Pan Blanco",
+        preparacion:preparacion[6].nombre,
+        ingrePrep: ingredientePreparacion[6].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[2],
+        precio: "50",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "SANDW3",
+        nombre: "Sandwiche de Cochinita Pibil",
+        pan: "Pan Blanco",
+        preparacion:preparacion[7].nombre,
+        ingrePrep: ingredientePreparacion[7].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[2],
+        precio: "50",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "SANDW4",
+        nombre: "Sandwiche de Milanesa",
+        pan: "Pan Blanco",
+        preparacion:preparacion[8].nombre,
+        ingrePrep: ingredientePreparacion[8].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            lechu: vegetales[4].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[2],
+        precio: "50",
+        url: "../assets/img/menu/cshandw.png"
+    },
 ];
 
 
@@ -283,12 +384,30 @@ function agregarAlCarrito  (e) {
     if (carrShop.some(producto => producto.id == idBtn)) {
         const index = carrShop.findIndex(producto => producto.id === idBtn);
         carrShop[index].cantidad++;
+
+
+        
+
+
+
     }else{
         productoAgregar.cantidad = 1;
         carrShop.push(productoAgregar);
+
     }
     
     actCanti();
 
     localStorage.setItem("carrShop", JSON.stringify(carrShop));
+
+    Toastify({
+        text: "Producto agregado " + productoAgregar.nombre,
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        className: "toastAgregarP",
+        
+      }).showToast();
 }
