@@ -9,6 +9,7 @@ const carrComprado = document.querySelector("#carrComprado");
 let btnEliminar = document.querySelector("#btnEliminar");
 let btnVaciar = document.querySelector("#btnVaciar");
 let totalPagar = document.querySelector("#totalPagar");
+let btnComprar = document.querySelector("#btnComprar");
 
  //ACTUALIZA LOS BOTONES PARA AGREGAR PRODUCTO
  const actbtnElim = () => {
@@ -139,6 +140,26 @@ function vaciarCarro(){
 function calcularTotal(){
     totalPagar.innerText = "$" + prodCarr.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
 }
+
+btnComprar.addEventListener("click", () => {
+
+    Swal.fire({
+        title: "Seguro que deseas comprar su pedido?",
+        showDenyButton: false,
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Comprar"
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            prodCarr.length = 0;
+            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+            cargaProductosCar();
+            
+            Swal.fire("Compra realizada", "", "success");
+        }
+    });
+});
 
 
 

@@ -101,6 +101,11 @@ const preparacion = [
     {
         id: "9",
         nombre: "Milanesa"
+    },
+
+    {
+        id: "10",
+        nombre: "Revolcado"
     }
 
 ]
@@ -138,7 +143,7 @@ const ingredientePreparacion = [
 
     {
         id: "7",
-        nombre: "Pierna adobada"
+        nombre: "Pierna adobada de puerco"
     },
 
     {
@@ -148,7 +153,12 @@ const ingredientePreparacion = [
 
     {
         id: "9",
-        nombre: "Milanesa"
+        nombre: "Milanesa empanizada"
+    },
+
+    {
+        id: "10",
+        nombre: "Queso, cebolla y jitomate"
     }
 ]
 

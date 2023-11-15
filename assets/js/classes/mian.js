@@ -1,4 +1,5 @@
-const lstProductos = [
+const lstProductos = 
+[
     {
         id: "BURG1",
         nombre: "Hamburguesa tradicional",
@@ -122,6 +123,52 @@ const lstProductos = [
         url: "../assets/img/menu/burToci.png"
     },
 
+    // HOT DOGS
+    {
+        id: "HOTD1",
+        nombre: "Hot Dog Tradicional",
+        pan: "Media noche",
+        preparacion:preparacion[0].nombre,
+        ingrePrep: ingredientePreparacion[0].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        vegetales:{
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },        
+        tipo: arrTipoProducto[3],
+        precio: "30",
+        url: "../assets/img/menu/hotdog.png"
+    },
+
+    {
+        id: "HOTD2",
+        nombre: "Hot Dog Revolcado",
+        pan: "Media noche",
+        preparacion:preparacion[9].nombre,
+        ingrePrep: ingredientePreparacion[9].nombre,
+        aderesos:{
+            
+            catsup: aderesos[0].nombre,
+            mayonesa: aderesos[1].nombre,
+            mostaza: aderesos[2].nombre,
+        },
+        vegetales:{
+            jito: vegetales[0].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre
+        },        
+        tipo: arrTipoProducto[3],
+        precio: "45",
+        url: "../assets/img/menu/hotdog.png"
+    },
+    
+
     //BAGUETTES
     {
         id: "BAG1",
@@ -193,7 +240,7 @@ const lstProductos = [
 
     {
         id: "SANDW1",
-        nombre: "Sandwiche de Pollo",
+        nombre: "Sandwich de Pollo",
         pan: "Pan Blanco",
         preparacion:preparacion[5].nombre,
         ingrePrep: ingredientePreparacion[5].nombre,
@@ -205,12 +252,12 @@ const lstProductos = [
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/cshandw.png"
+        url: "../assets/img/menu/sandw.png"
     },
 
     {
         id: "SANDW2",
-        nombre: "Sandwiche de Pierna Adobada",
+        nombre: "Sandwich de Pierna Adobada",
         pan: "Pan Blanco",
         preparacion:preparacion[6].nombre,
         ingrePrep: ingredientePreparacion[6].nombre,
@@ -222,12 +269,12 @@ const lstProductos = [
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/cshandw.png"
+        url: "../assets/img/menu/sandw.png"
     },
 
     {
         id: "SANDW3",
-        nombre: "Sandwiche de Cochinita Pibil",
+        nombre: "Sandwich de Cochinita Pibil",
         pan: "Pan Blanco",
         preparacion:preparacion[7].nombre,
         ingrePrep: ingredientePreparacion[7].nombre,
@@ -239,12 +286,12 @@ const lstProductos = [
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/cshandw.png"
+        url: "../assets/img/menu/sandw.png"
     },
 
     {
         id: "SANDW4",
-        nombre: "Sandwiche de Milanesa",
+        nombre: "Sandwich de Milanesa",
         pan: "Pan Blanco",
         preparacion:preparacion[8].nombre,
         ingrePrep: ingredientePreparacion[8].nombre,
@@ -256,6 +303,78 @@ const lstProductos = [
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
+        url: "../assets/img/menu/sandw.png"
+    },
+
+    {
+        id: "BURR1",
+        nombre: "Burrito de pollo",
+        pan: "Tortilla de Harina",
+        preparacion:preparacion[5].nombre,
+        ingrePrep: ingredientePreparacion[5].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[5],
+        precio: "60",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "BURR2",
+        nombre: "Burrito de Pierna Adobada",
+        pan: "Tortilla de Harina",
+        preparacion:preparacion[6].nombre,
+        ingrePrep: ingredientePreparacion[6].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[5],
+        precio: "60",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "BURR2",
+        nombre: "Burrito de Cochinita Pibil",
+        pan: "Tortilla de Harina",
+        preparacion:preparacion[7].nombre,
+        ingrePrep: ingredientePreparacion[7].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[5],
+        precio: "60",
+        url: "../assets/img/menu/cshandw.png"
+    },
+
+    {
+        id: "BURR2",
+        nombre: "Burrito de Milanesa",
+        pan: "Tortilla de Harina",
+        preparacion:preparacion[8].nombre,
+        ingrePrep: ingredientePreparacion[8].nombre,
+        vegetales:{
+            pica: vegetales[2].nombre,
+            aguac: vegetales[3].nombre,
+            cebo: vegetales[1].nombre,
+            pica: vegetales[2].nombre,
+            firjo: vegetales[5].nombre,
+        },        
+        tipo: arrTipoProducto[5],
+        precio: "60",
         url: "../assets/img/menu/cshandw.png"
     },
 ];
@@ -270,6 +389,7 @@ const btnsMenu = document.querySelectorAll(`.btnMenuProducto`);
 // const VEGPROD = document.querySelector(`.vegProd`)
 let btnsAgregar = document.querySelectorAll(`.btnAnadirP`);
 let cantidadProductos = document.querySelector(`#cantidadProductos`);
+let spinn = document.querySelector(`#spinn`);
 
  const cargaIngrediente = (producto) => {
     const {vegetales} = producto;
@@ -314,16 +434,38 @@ const actCanti = () => {
     cantidadProductos.innerText = cantidadProductosAgregar;
 }
 
-
+//PROMESA CARGAR PRODUCTO
  const cargaProducto = (productos) => {
+    
+
+    return new Promise((resolve,reject) => {
+        CONTPROD.classList.add("disabled");
+        spinn.classList.remove("disabled");
+        setTimeout(() => {
+
+            if(typeof productos === "object" && productos != null){
+                resolve(productos);
+            }else{
+                reject("Error al cargar productos")
+            }
+
+        }, 3 * 1000);
+    });    
+}
+
+
+const pintaProductos  = async (productos) => {
+
+
+    let prod = await cargaProducto(productos);
+
     CONTPROD.innerHTML = "";
-    productos.forEach( (producto) => {
-        const div = document.createElement("div");
+        prod.forEach((producto) => {
+            const div = document.createElement("div");
+            div.classList.add("dvProducto");
+            // div.id = "pills-home";
 
-        div.classList.add("dvProducto");
-        // div.id = "pills-home";
-
-        div.innerHTML = `
+            div.innerHTML = `
                         <img class="imgProducto" src="${producto.url}" alt="" >
                         <div class="datProd">
                             <h3>${producto.nombre}</h3>
@@ -336,13 +478,52 @@ const actCanti = () => {
                         </div>
         `;
 
-        CONTPROD.append(div);
-    })
+            CONTPROD.append(div);
+        })
 
-    actbtnAgr();
+        actbtnAgr();
+        spinn.classList.add("disabled");
+        CONTPROD.classList.remove("disabled");
+
+
+    
+    //     await cargaProducto(productos).then((response) => {
+    //     // console.log(response);
+    //     CONTPROD.innerHTML = "";
+    //     response.forEach((producto) => {
+    //         const div = document.createElement("div");
+    //         div.classList.add("dvProducto");
+    //         // div.id = "pills-home";
+
+    //         div.innerHTML = `
+    //                     <img class="imgProducto" src="${producto.url}" alt="" >
+    //                     <div class="datProd">
+    //                         <h3>${producto.nombre}</h3>
+    //                         <ul class="ulIngre">
+    //                             <li>${producto.ingrePrep}</li>
+    //                             ${cargaAderesos(producto)}
+    //                             ${cargaIngrediente(producto)}
+    //                         </ul>
+    //                         <button id="${producto.id}" class="btnAnadirP"><i class="bi bi-cart-plus-fill"></i>Ordenar</button>
+    //                     </div>
+    //     `;
+
+    //         CONTPROD.append(div);
+    //     })
+
+    //     actbtnAgr();
+    //     console.log("productos cargados");
+
+    // });
+    // await cargaProducto(productos).catch((error) => {
+    //     console.log(error.message);
+    // });
+        
+
+
 }
-cargaProducto(lstProductos);
 
+pintaProductos(lstProductos);
 
 // AGREGA Y ELIMINA LA CLASE ACTIVE DEL MENU Y TAMBIEN AGREGA LOS PRODUCTOS
 btnsMenu.forEach(boton => {
@@ -356,9 +537,9 @@ btnsMenu.forEach(boton => {
 
             const prodFilter = lstProductos.filter(producto => producto.tipo.id === e.currentTarget.id);
             // tituProd.innerText = prodFilter.tipo;
-            cargaProducto(prodFilter);
+            pintaProductos(prodFilter);
         }else{
-            cargaProducto(lstProductos);
+            pintaProductos(lstProductos);
         }
 
     });
