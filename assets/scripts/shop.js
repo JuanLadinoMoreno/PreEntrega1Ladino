@@ -1,7 +1,3 @@
-let total = 0;
-
-const  prodCarr = JSON.parse(localStorage.getItem("carrShop"));
-
 const carVacio = document.querySelector("#carVacio");
 const productsCarr = document.querySelector("#productsCarr");
 const accCarr = document.querySelector("#accCarr");
@@ -11,46 +7,13 @@ let btnVaciar = document.querySelector("#btnVaciar");
 let totalPagar = document.querySelector("#totalPagar");
 let btnComprar = document.querySelector("#btnComprar");
 
- //ACTUALIZA LOS BOTONES PARA AGREGAR PRODUCTO
- const actbtnElim = () => {
-    btnEliminar = document.querySelectorAll(".btnEliminar");
 
-    btnEliminar.forEach(btn => {
-        btn.addEventListener("click", eliminarDelCarrito);
-    });
-}
-
-const eliminarDelCarrito = (e) => {
-    const idBoton = e.currentTarget.id;
-
-    const productoAgregar = prodCarr.find(producto => producto.id === idBoton);
-    Swal.fire({
-        title: "Seguro que deseas eliminar el producto?" + productoAgregar.nombre,
-        showDenyButton: false,
-        showCancelButton: true,
-        showConfirmButton: true,
-        confirmButtonText: "Acepto",
-    }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-
-            const index = prodCarr.findIndex(producto => producto.id === idBoton);
-            prodCarr.splice(index,1);
-            cargaProductosCar();
-            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
-
-            Swal.fire("Producto eliminado", "", "success");
-        } 
-    });
+const cargaProductosCar = async () => {
 
 
+    let prodCarrLS = await getStorage();
 
-    
-    
-}
-
-const cargaProductosCar = () => {
-    if (prodCarr && prodCarr.length > 0) {
+    if (prodCarrLS && prodCarrLS.length > 0) {
 
         carVacio.classList.add("disabled");
         carrComprado.classList.add("disabled");
@@ -58,16 +21,15 @@ const cargaProductosCar = () => {
         accCarr.classList.remove("disabled");
 
         productsCarr.innerHTML = "";
-
-        prodCarr.forEach(producto => {
-            total += parseInt(producto.cantidad * producto.precio);
+        prodCarrLS.forEach(producto => {
+           
             const div = document.createElement("div");
             div.classList.add("prodCarr");
             div.innerHTML = `
-                        <img class="imgPro" src="${producto.url}"" alt="${producto.titulo}" style="width:80px;">
+            <!---->    <img class="imgPro" src="${producto.producto.urlImg}" alt="${producto.titulo}" style="width:80px;">     
                         <div class="titu">
                             <small>Producto</small>
-                            <h4>${producto.nombre}</h4>
+                             <h4>${producto.producto.nombre}</h4>
                         </div>
                         <div class="cantidad">
                             <small>Cantidad</small>
@@ -75,13 +37,14 @@ const cargaProductosCar = () => {
                         </div>
                         <div class="precio">
                             <small>Precio</small>
-                            <p>$${producto.precio}</p>
+                            <p>$${producto.producto.precio}</p>
                         </div>
                         <div class="subtotal">
                             <small>Subtotal</small>
-                            <p>$${producto.precio * producto.cantidad}</p>
+                            <p>$${producto.producto.precio * producto.cantidad}</p>
                         </div>
-                        <button class="btnEliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
+                         <button onclick="javascript:eliminarDelCarrito(${producto.producto.id});" class="btnEliminar"><i class="bi bi-trash-fill"></i></button> 
+                    <!--     <button class="btnEliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button> -->
                         
                         
                         `;
@@ -104,13 +67,49 @@ const cargaProductosCar = () => {
         accCarr.classList.add("disabled");
 
     }
-    actbtnElim();
+
     calcularTotal();
 }
 
 cargaProductosCar();
 
-btnVaciar.addEventListener("click", () => {
+
+const eliminarDelCarrito = async (id) => {
+ 
+    
+    let prodCarrLS = await getStorage();
+    let nomProd = prodCarrLS.map((prod) => prod.producto.nombre);
+
+    const index = getIndex(
+        id,
+        prodCarrLS.map((prod) => prod.producto.id)
+    );
+
+    const nombre = nomProd[index];
+    
+    Swal.fire({
+        title: "Seguro que deseas eliminar el producto?  " + nombre,
+        showDenyButton: false,
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Acepto",
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+
+            prodCarrLS.splice(index,1);
+            cargaProductosCar();
+            localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(prodCarrLS));
+
+            Swal.fire("Producto eliminado", "", "success");
+        } 
+    });
+    
+}
+
+btnVaciar.addEventListener("click", async ()  => {
+
+    let prodCarrLS = await getStorage();
 
     Swal.fire({
         title: "Seguro que deseas vaciar el carrito con su pedido?",
@@ -121,8 +120,8 @@ btnVaciar.addEventListener("click", () => {
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            prodCarr.length = 0;
-            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+            prodCarrLS.length = 0;
+            localStorage.setItem("carrShop", JSON.stringify(prodCarrLS));
             cargaProductosCar();
             
             Swal.fire("El carrito de compras se ha vaciado", "", "success");
@@ -131,18 +130,19 @@ btnVaciar.addEventListener("click", () => {
 });
 
 function vaciarCarro(){
-    prodCarr.length = 0;
-    localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+    prodCarrLS.length = 0;
+    localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(prodCarrLS));
     cargaProductosCar();
 }
 
 
-function calcularTotal(){
-    totalPagar.innerText = "$" + prodCarr.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
+async function calcularTotal(){
+    let prodCarrLS = await getStorage();
+    totalPagar.innerText = "$" + prodCarrLS.reduce((acc, producto) => acc + (producto.cantidad * producto.producto.precio), 0);
 }
 
-btnComprar.addEventListener("click", () => {
-
+btnComprar.addEventListener("click", async () => {
+    let prodCarrLS = await getStorage();
     Swal.fire({
         title: "Seguro que deseas comprar su pedido?",
         showDenyButton: false,
@@ -152,8 +152,8 @@ btnComprar.addEventListener("click", () => {
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            prodCarr.length = 0;
-            localStorage.setItem("carrShop", JSON.stringify(prodCarr));
+            prodCarrLS.length = 0;
+            localStorage.setItem("carrShop", JSON.stringify(prodCarrLS));
             cargaProductosCar();
             
             Swal.fire("Compra realizada", "", "success");

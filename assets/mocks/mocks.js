@@ -1,12 +1,244 @@
+const carneBurguer = [
+    {
+        id: "1",
+        nombre: "Carne de res"
+    },
+
+    {
+        id: "2",
+        nombre : "Carne de pollo"
+    }
+]
+
+const aderesos = [
+    {
+        id: "1",
+        nombre: "Catsup"
+    },
+    {
+        id: "2",
+        nombre: "Mayonesa"
+    },
+    {
+        id: "3",
+        nombre: "Mostaza"
+    }
+]
+
+const vegetales =[
+    {
+        id: "1",
+        nombre: "jitomate"
+    },
+
+    {
+        id: "2",
+        nombre: "cebolla"
+    },
+
+    {
+        id: "3",
+        nombre: "rajas"
+    },
+
+    {
+        id: "4",
+        nombre: "aguacate"
+    },
+
+    {
+        id: "5",
+        nombre: "lechuga"
+    },
+
+    {
+        id: "6",
+        nombre: "frijoles"
+    }
+]
+
+const preparacion = [
+    {
+        id: "1",
+        nombre: "tradicional"
+    },
+
+    {
+        id: "2",
+        nombre: "tocino"
+    },
+    
+    {
+        id: "3",
+        nombre: "hawaiana"
+    },
+
+    {
+        id: "4",
+        nombre: "champiñon"
+    },
+    
+    {
+        id: "5",
+        nombre: "mexicana"
+    },
+
+    {
+        id: "6",
+        nombre: "Pollo"
+    },
+
+    {
+        id: "7",
+        nombre: "Pierna adobada"
+    },
+
+    {
+        id: "8",
+        nombre: "Cochinita Pibil"
+    },
+
+    {
+        id: "9",
+        nombre: "Milanesa"
+    },
+
+    {
+        id: "10",
+        nombre: "Revolcado"
+    }
+
+]
+
+const ingredientePreparacion = [
+    {
+        id: "1",
+        nombre: "Lonchasssss de tocinosssss"
+    },
+
+    {
+        id: "2",
+        nombre: "Lonchas de tocino"
+    },
+
+    {
+        id: "3",
+        nombre: "Piña y jamón"
+    },
+
+    {
+        id: "4",
+        nombre: "Champiñones con queso"
+    },
+
+    {
+        id: "5",
+        nombre: "Chorizo de la casa con queso y aguacate"
+    },
+
+    {
+        id: "6",
+        nombre: "Pollo desebrado"
+    },
+
+    {
+        id: "7",
+        nombre: "Pierna adobada de puerco"
+    },
+
+    {
+        id: "8",
+        nombre: "Cochinita Pibil"
+    },
+
+    {
+        id: "9",
+        nombre: "Milanesa empanizada"
+    },
+
+    {
+        id: "10",
+        nombre: "Queso, cebolla y jitomate"
+    }
+]
+
+const arrTipoProducto = [
+    {
+        id: "burguerP",
+        nombre: "hamburguesa",
+        url: "../assets/img/menu/burgMex.png"
+    },
+
+    {
+        id: "bagP",
+        nombre: "baguette",
+        url: "../assets/img/menu/burgMex.png"
+    },
+
+    {
+        id: "sandP",
+        nombre: "club shandwiches"        ,
+        url: "../assets/img/menu/burgMex.png"
+    },
+
+    {
+        id: "hotdogP",
+        nombre: "hot dog",
+        url: "../assets/img/menu/burgMex.png"
+    },
+
+    {
+        id: "5",
+        nombre: "gran danés",
+        url: "../assets/img/menu/burgMex.png"
+    },
+
+    {
+        id: "burrP",
+        nombre: "burrito",
+        url: "../assets/img/menu/burgMex.png"
+    }
+]
+
+const arrTipoBurg = [
+    {
+        id: "1",
+        nombre: "tradicional"
+    },
+
+    {
+        id: "2",
+        nombre: "tocino"
+    },
+    
+    {
+        id: "3",
+        nombre: "hawaiana"
+    },
+
+    {
+        id: "4",
+        nombre: "champiñon"
+    },
+    
+    {
+        id: "5",
+        nombre: "mexicana"
+    },
+]
+
+
+
 const lstProductos = 
 [
+
     {
-        id: "BURG1",
-        nombre: "Hamburguesa tradicional",
+        id: "1",
+        nombre: "Hamburguesa Tradicional",
         pan: "Pan Blanco",
         preparacion: preparacion[0].nombre,
         ingrePrep: ingredientePreparacion[0].nombre,
-        carne: carneBurguer[0].nombre,
+        // carne: carneBurguer[0].nombre,
         aderesos:{
             
             catsup: aderesos[0].nombre,
@@ -18,22 +250,19 @@ const lstProductos =
             jito: vegetales[0].nombre,
             cebo: vegetales[1].nombre,
             pica: vegetales[2].nombre
-        }
-        ,
+        },
         tipo: arrTipoProducto[0],
         precio: "50",
-        url: "../assets/img/menu/burgMex.png"
-        
-        
+        urlImg: "../assets/img/menu/burToci.png"
     },
 
     {
-        id: "BURG2",
+        id: "2",
         nombre: "Hamburguesa con tocino",
         pan: "Pan Blanco",
         preparacion: preparacion[1].nombre,
         ingrePrep: ingredientePreparacion[1].nombre,
-        carne: carneBurguer[0].nombre,
+        // carne: carneBurguer[0].nombre,
         aderesos:{
             
             catsup: aderesos[0].nombre,
@@ -48,16 +277,16 @@ const lstProductos =
         },
         tipo: arrTipoProducto[0],
         precio: "50",
-        url: "../assets/img/menu/burToci.png"
+        urlImg: "../assets/img/menu/burToci.png"
     },
 
     {
-        id: "BURG3",
+        id: "3",
         nombre: "Hamburguesa hawaiana",
         pan: "Pan Blanco",
         preparacion:preparacion[2].nombre,
         ingrePrep: ingredientePreparacion[2].nombre,
-        carne: carneBurguer[0].nombre,
+        // carne: carneBurguer[0].nombre,
         aderesos:{
             
             catsup: aderesos[0].nombre,
@@ -72,16 +301,16 @@ const lstProductos =
         },
         tipo: arrTipoProducto[0],
         precio: "50",
-        url: "../assets/img/menu/burToci.png"
+        urlImg: "../assets/img/menu/burToci.png"
     },
 
     {
-        id: "BURG4",
+        id: "4",
         nombre: "Hamburguesa con champiñones",
         pan: "Pan Blanco",
         preparacion:preparacion[3].nombre,
         ingrePrep: ingredientePreparacion[3].nombre,
-        carne: carneBurguer[0].nombre,
+        // carne: carneBurguer[0].nombre,
         aderesos:{
             
             catsup: aderesos[0].nombre,
@@ -94,18 +323,18 @@ const lstProductos =
             cebo: vegetales[1].nombre,
             pica: vegetales[2].nombre
         },
-        tipo: arrTipoProducto[0],   
+        tipo: arrTipoProducto[0],
         precio: "50",
-        url: "../assets/img/menu/burToci.png"
+        urlImg: "../assets/img/menu/burToci.png"
     },
 
     {
-        id: "BURG5",
+        id: "5",
         nombre: "Hamburguesa Mexicana",
         pan: "Pan Blanco",
         preparacion:preparacion[4].nombre,
         ingrePrep: ingredientePreparacion[4].nombre,
-        carne: carneBurguer[0].nombre,
+        // carne: carneBurguer[0].nombre,
         aderesos:{
             
             catsup: aderesos[0].nombre,
@@ -120,12 +349,12 @@ const lstProductos =
         },
         tipo: arrTipoProducto[0],      
         precio: "50",
-        url: "../assets/img/menu/burToci.png"
+        urlImg: "../assets/img/menu/burToci.png"
     },
 
     // HOT DOGS
     {
-        id: "HOTD1",
+        id: "6",
         nombre: "Hot Dog Tradicional",
         pan: "Media noche",
         preparacion:preparacion[0].nombre,
@@ -143,11 +372,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[3],
         precio: "30",
-        url: "../assets/img/menu/hotdog.png"
+        urlImg: "../assets/img/menu/hotdog.png"
     },
 
     {
-        id: "HOTD2",
+        id: "7",
         nombre: "Hot Dog Revolcado",
         pan: "Media noche",
         preparacion:preparacion[9].nombre,
@@ -165,13 +394,13 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[3],
         precio: "45",
-        url: "../assets/img/menu/hotdog.png"
+        urlImg: "../assets/img/menu/hotdog.png"
     },
     
 
     //BAGUETTES
     {
-        id: "BAG1",
+        id: "8",
         nombre: "Baguette con Pollo",
         pan: "Pan Baguette Integral",
         preparacion:preparacion[5].nombre,
@@ -184,11 +413,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[1],
         precio: "50",
-        url: "../assets/img/menu/baguet.png"
+        urlImg: "../assets/img/menu/baguet.png"
     },
 
     {
-        id: "BAG2",
+        id: "9",
         nombre: "Baguette Pierna Adobada",
         pan: "Pan Baguette Integral",
         preparacion:preparacion[6].nombre,
@@ -201,11 +430,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[1],
         precio: "50",
-        url: "../assets/img/menu/baguet.png"
+        urlImg: "../assets/img/menu/baguet.png"
     },
     
     {
-        id: "BAG3",
+        id: "10",
         nombre: "Baguette de Cochinita Pibil",
         pan: "Pan Baguette Integral",
         preparacion:preparacion[7].nombre,
@@ -218,12 +447,12 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[1],
         precio: "50",
-        url: "../assets/img/menu/baguet.png"
+        urlImg: "../assets/img/menu/baguet.png"
     },
 
     {
-        id: "BAG3",
-        nombre: "Baguette de Cochinita Pibil",
+        id: "11",
+        nombre: "Baguette de Milanesa",
         pan: "Pan Baguette Integral",
         preparacion:preparacion[8].nombre,
         ingrePrep: ingredientePreparacion[8].nombre,
@@ -235,11 +464,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[1],
         precio: "50",
-        url: "../assets/img/menu/baguet.png"
+        urlImg: "../assets/img/menu/baguet.png"
     },
 
     {
-        id: "SANDW1",
+        id: "12",
         nombre: "Sandwich de Pollo",
         pan: "Pan Blanco",
         preparacion:preparacion[5].nombre,
@@ -252,11 +481,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/sandw.png"
+        urlImg: "../assets/img/menu/sandw.png"
     },
 
     {
-        id: "SANDW2",
+        id: "13",
         nombre: "Sandwich de Pierna Adobada",
         pan: "Pan Blanco",
         preparacion:preparacion[6].nombre,
@@ -269,11 +498,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/sandw.png"
+        urlImg: "../assets/img/menu/sandw.png"
     },
 
     {
-        id: "SANDW3",
+        id: "14",
         nombre: "Sandwich de Cochinita Pibil",
         pan: "Pan Blanco",
         preparacion:preparacion[7].nombre,
@@ -286,11 +515,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/sandw.png"
+        urlImg: "../assets/img/menu/sandw.png"
     },
 
     {
-        id: "SANDW4",
+        id: "15",
         nombre: "Sandwich de Milanesa",
         pan: "Pan Blanco",
         preparacion:preparacion[8].nombre,
@@ -303,11 +532,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[2],
         precio: "50",
-        url: "../assets/img/menu/sandw.png"
+        urlImg: "../assets/img/menu/sandw.png"
     },
 
     {
-        id: "BURR1",
+        id: "16",
         nombre: "Burrito de pollo",
         pan: "Tortilla de Harina",
         preparacion:preparacion[5].nombre,
@@ -321,11 +550,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[5],
         precio: "60",
-        url: "../assets/img/menu/cshandw.png"
+        urlImg: "../assets/img/menu/cshandw.png"
     },
 
     {
-        id: "BURR2",
+        id: "17",
         nombre: "Burrito de Pierna Adobada",
         pan: "Tortilla de Harina",
         preparacion:preparacion[6].nombre,
@@ -339,11 +568,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[5],
         precio: "60",
-        url: "../assets/img/menu/cshandw.png"
+        urlImg: "../assets/img/menu/cshandw.png"
     },
 
     {
-        id: "BURR2",
+        id: "18",
         nombre: "Burrito de Cochinita Pibil",
         pan: "Tortilla de Harina",
         preparacion:preparacion[7].nombre,
@@ -357,11 +586,11 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[5],
         precio: "60",
-        url: "../assets/img/menu/cshandw.png"
+        urlImg: "../assets/img/menu/cshandw.png"
     },
 
     {
-        id: "BURR2",
+        id: "19",
         nombre: "Burrito de Milanesa",
         pan: "Tortilla de Harina",
         preparacion:preparacion[8].nombre,
@@ -375,220 +604,8 @@ const lstProductos =
         },        
         tipo: arrTipoProducto[5],
         precio: "60",
-        url: "../assets/img/menu/cshandw.png"
+        urlImg: "../assets/img/menu/cshandw.png"
     },
 ];
 
 
-
-
-
-
-const CONTPROD = document.querySelector(`.dvProductos`);
-const btnsMenu = document.querySelectorAll(`.btnMenuProducto`);
-// const VEGPROD = document.querySelector(`.vegProd`)
-let btnsAgregar = document.querySelectorAll(`.btnAnadirP`);
-let cantidadProductos = document.querySelector(`#cantidadProductos`);
-let spinn = document.querySelector(`#spinn`);
-
- const cargaIngrediente = (producto) => {
-    const {vegetales} = producto;
-    if (!vegetales){
-        return"";
-    }
-    let vegeArre = Object.values(vegetales);
-    let HTMLresul = "";
-    for (let i = 0; i < vegeArre.length; i++) {
-        HTMLresul = HTMLresul + `<li> ${vegeArre[i]} </li>` ;
-        
-    }
-    return HTMLresul;
- }
-
- const cargaAderesos = (producto) => {
-    const {aderesos} = producto;
-    if (!aderesos){
-        return"";
-    }
-    let adeArre = Object.values(aderesos);
-    let HTMLresul = "";
-    for (let i = 0; i < adeArre.length; i++) {
-        HTMLresul = HTMLresul + `<li> ${adeArre[i]} </li>` ;
-        
-    }
-    return HTMLresul;
- }
-
- //ACTUALIZA LOS BOTONES PARA AGREGAR PRODUCTO
- const actbtnAgr = () => {
-    btnsAgregar = document.querySelectorAll(".btnAnadirP");
-
-    btnsAgregar.forEach(btn => {
-        btn.addEventListener("click", agregarAlCarrito);
-    });
-}
-
-//ACTUALIZA CANTIDAD DE PRODUCTOS EN CARRITO(numero)
-const actCanti = () => {
-    let cantidadProductosAgregar = carrShop.reduce((acc, producto) => acc + producto.cantidad,0);
-    cantidadProductos.innerText = cantidadProductosAgregar;
-}
-
-//PROMESA CARGAR PRODUCTO
- const cargaProducto = (productos) => {
-    
-
-    return new Promise((resolve,reject) => {
-        CONTPROD.classList.add("disabled");
-        spinn.classList.remove("disabled");
-        setTimeout(() => {
-
-            if(typeof productos === "object" && productos != null){
-                resolve(productos);
-            }else{
-                reject("Error al cargar productos")
-            }
-
-        }, 3 * 1000);
-    });    
-}
-
-
-const pintaProductos  = async (productos) => {
-
-
-    let prod = await cargaProducto(productos);
-
-    CONTPROD.innerHTML = "";
-        prod.forEach((producto) => {
-            const div = document.createElement("div");
-            div.classList.add("dvProducto");
-            // div.id = "pills-home";
-
-            div.innerHTML = `
-                        <img class="imgProducto" src="${producto.url}" alt="" >
-                        <div class="datProd">
-                            <h3>${producto.nombre}</h3>
-                            <ul class="ulIngre">
-                                <li>${producto.ingrePrep}</li>
-                                ${cargaAderesos(producto)}
-                                ${cargaIngrediente(producto)}
-                            </ul>
-                            <button id="${producto.id}" class="btnAnadirP"><i class="bi bi-cart-plus-fill"></i>Ordenar</button>
-                        </div>
-        `;
-
-            CONTPROD.append(div);
-        })
-
-        actbtnAgr();
-        spinn.classList.add("disabled");
-        CONTPROD.classList.remove("disabled");
-
-
-    
-    //     await cargaProducto(productos).then((response) => {
-    //     // console.log(response);
-    //     CONTPROD.innerHTML = "";
-    //     response.forEach((producto) => {
-    //         const div = document.createElement("div");
-    //         div.classList.add("dvProducto");
-    //         // div.id = "pills-home";
-
-    //         div.innerHTML = `
-    //                     <img class="imgProducto" src="${producto.url}" alt="" >
-    //                     <div class="datProd">
-    //                         <h3>${producto.nombre}</h3>
-    //                         <ul class="ulIngre">
-    //                             <li>${producto.ingrePrep}</li>
-    //                             ${cargaAderesos(producto)}
-    //                             ${cargaIngrediente(producto)}
-    //                         </ul>
-    //                         <button id="${producto.id}" class="btnAnadirP"><i class="bi bi-cart-plus-fill"></i>Ordenar</button>
-    //                     </div>
-    //     `;
-
-    //         CONTPROD.append(div);
-    //     })
-
-    //     actbtnAgr();
-    //     console.log("productos cargados");
-
-    // });
-    // await cargaProducto(productos).catch((error) => {
-    //     console.log(error.message);
-    // });
-        
-
-
-}
-
-pintaProductos(lstProductos);
-
-// AGREGA Y ELIMINA LA CLASE ACTIVE DEL MENU Y TAMBIEN AGREGA LOS PRODUCTOS
-btnsMenu.forEach(boton => {
-    boton.addEventListener("click", (e) => {
-        // ELIMINA LA CALSE "active"
-        btnsMenu.forEach(boton => boton.classList.remove("active"));
-        // ASIGNA LA CLASE ACTIVE AL ELEMENTO CLICK
-        e.currentTarget.classList.add("active");
-
-        if (e.currentTarget.id != "todosP"){            
-
-            const prodFilter = lstProductos.filter(producto => producto.tipo.id === e.currentTarget.id);
-            // tituProd.innerText = prodFilter.tipo;
-            pintaProductos(prodFilter);
-        }else{
-            pintaProductos(lstProductos);
-        }
-
-    });
-    
-});
-
-
-let carrShop;
-const  prodCarrLS = localStorage.getItem("carrShop");
-if(prodCarrLS){
-    carrShop = JSON.parse(prodCarrLS);
-    actCanti();
-}else{
-    carrShop = [];
-}
-
-
-function agregarAlCarrito  (e) {
-    const idBtn = e.currentTarget.id;
-    const productoAgregar = lstProductos.find(producto => producto.id === idBtn);
-
-
-    if (carrShop.some(producto => producto.id == idBtn)) {
-        const index = carrShop.findIndex(producto => producto.id === idBtn);
-        carrShop[index].cantidad++;
-
-
-        
-
-
-
-    }else{
-        productoAgregar.cantidad = 1;
-        carrShop.push(productoAgregar);
-
-    }
-    
-    actCanti();
-
-    localStorage.setItem("carrShop", JSON.stringify(carrShop));
-
-    Toastify({
-        text: "Producto agregado " + productoAgregar.nombre,
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        className: "toastAgregarP",
-        
-      }).showToast();
-}
