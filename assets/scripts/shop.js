@@ -25,29 +25,21 @@ const cargaProductosCar = async () => {
            
             const div = document.createElement("div");
             div.classList.add("prodCarr");
-            div.innerHTML = `
-            <!---->    <img class="imgPro" src="${producto.producto.urlImg}" alt="${producto.titulo}" style="width:80px;">     
-                        <div class="titu">
-                            <small>Producto</small>
-                             <h4>${producto.producto.nombre}</h4>
-                        </div>
-                        <div class="cantidad">
-                            <small>Cantidad</small>
-                            <p>${producto.cantidad}</p>
-                        </div>
-                        <div class="precio">
-                            <small>Precio</small>
-                            <p>$${producto.producto.precio}</p>
-                        </div>
-                        <div class="subtotal">
-                            <small>Subtotal</small>
-                            <p>$${producto.producto.precio * producto.cantidad}</p>
-                        </div>
-                         <button onclick="javascript:eliminarDelCarrito(${producto.producto.id});" class="btnEliminar"><i class="bi bi-trash-fill"></i></button> 
-                    <!--     <button class="btnEliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button> -->
-                        
-                        
-                        `;
+
+            div.innerHTML = `            
+                <div class="card d-flex flex-row justify-content-center align-items-center w-100 bg-transparent border-0" style="">
+                    <img src="${producto.producto.urlImg}"  class="card-img-top" alt="..." style="width: 8rem;">
+                    <div class="card-body d-flex flex-row justify-content-around">
+                        <h3 class="card-title">${producto.producto.nombre}</h3>
+                        <p class="card-text fs-5">Cantidad:  <br> <span class="fw-bolder fs-5">${producto.cantidad} </span></p>
+                        <p class="card-text fs-5">Precio: <br> <span class="fw-bolder fs-5">${producto.producto.precio} </span></p>
+                        <p class="card-text fs-5">Subtotal: <br> <span class="fw-bolder fs-5">${producto.producto.precio * producto.cantidad} </span></p>
+                        <button onclick="javascript:eliminarDelCarrito(${producto.producto.id});" class="btnEliminar"><i class="bi bi-trash-fill"></i></button> 
+                    </div>
+                </div>
+            `;
+
+
             productsCarr.append(div);
 
         })
@@ -98,10 +90,11 @@ const eliminarDelCarrito = async (id) => {
         if (result.isConfirmed) {
 
             prodCarrLS.splice(index,1);
-            cargaProductosCar();
+            
             localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(prodCarrLS));
 
             Swal.fire("Producto eliminado", "", "success");
+            cargaProductosCar();
         } 
     });
     
@@ -122,6 +115,7 @@ btnVaciar.addEventListener("click", async ()  => {
         if (result.isConfirmed) {
             prodCarrLS.length = 0;
             localStorage.setItem("carrShop", JSON.stringify(prodCarrLS));
+            localStorage.removeItem("carrShop");
             cargaProductosCar();
             
             Swal.fire("El carrito de compras se ha vaciado", "", "success");
@@ -154,12 +148,10 @@ btnComprar.addEventListener("click", async () => {
         if (result.isConfirmed) {
             prodCarrLS.length = 0;
             localStorage.setItem("carrShop", JSON.stringify(prodCarrLS));
+            localStorage.removeItem("carrShop");
             cargaProductosCar();
             
             Swal.fire("Compra realizada", "", "success");
         }
     });
 });
-
-
-
